@@ -20,20 +20,28 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.8
     - pip
   run:
-    - python >=3.6
+    - python >=3.8
     - toml
 
 test:
   requires:
     - pip
+    - coverage ==7.0.5
+    - pint
+    - pytest ==7.2.1
+    - pytest-cov ==4.0.0
   imports:
     - vulture
+  source_files:
+    - vulture
+    - tests
   commands:
     - pip check
     - vulture --help
+    - pytest --cov vulture --cov-report=html --cov-report=term --cov-report=xml --cov-append
 
 about:
   home: https://github.com/jendrikseipp/vulture
@@ -43,4 +51,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - Zeitsperre
     - jakirkham

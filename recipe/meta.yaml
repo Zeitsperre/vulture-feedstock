@@ -29,14 +29,13 @@ requirements:
 test:
   requires:
     - pip
-    - coverage ==7.0.5
+    - coverage
     - pint
-    - pytest ==7.2.1
-    - pytest-cov ==4.0.0
+    - pytest
+    - pytest-cov
   imports:
     - vulture
   source_files:
-    - vulture
     - tests
   commands:
     - pip check
